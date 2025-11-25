@@ -8,8 +8,22 @@ const MongoStore = require('connect-mongo');
 const authRoutes = require('./routes/auth');
 const eventRoutes = require('./routes/events');
 const registrationRoutes = require('./routes/registrations');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
+
+// Security headers
+app.use(helmet());
+
+// Basic rate limiting to mitigate brute-force and abusive requests
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    standardHeaders: true,
+    legacyHeaders: false
+});
+app.use(limiter);
 
 // Middleware
 // CORS configuration

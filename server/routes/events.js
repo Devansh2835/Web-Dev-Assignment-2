@@ -198,6 +198,16 @@ router.delete('/:id', isAuthenticated, isAdmin, async (req, res) => {
             return res.status(403).json({ error: 'You can only delete events you organize' });
         }
 
+        // If the event has an associated Cloudinary public id, attempt to delete it
+        try {
+            if (event.imagePublicId) {
+                await cloudinary.uploader.destroy(event.imagePublicId, { resource_type: 'image' });
+            }
+        } catch (destroyErr) {
+            console.error('Failed to delete Cloudinary image during event deletion:', destroyErr);
+            // Continue with deletion even if Cloudinary deletion fails
+        }
+
         await Event.findByIdAndDelete(req.params.id);
 
         res.json({ message: 'Event deleted successfully' });

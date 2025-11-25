@@ -23,7 +23,13 @@ const seedDatabase = async () => {
         await Event.deleteMany({});
         console.log('Cleared existing data');
 
-        // Create dummy admin
+        // Prevent running the seed against a production database
+        if (process.env.NODE_ENV === 'production') {
+            console.error('Refusing to run seed script in production. Set NODE_ENV != "production" to run locally.');
+            process.exit(1);
+        }
+
+        // Create dummy admin (development only)
         const admin = await User.create({
             name: 'Dr. Sarah Johnson',
             email: 'admin@college.edu',
