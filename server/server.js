@@ -42,6 +42,12 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// When running behind a proxy (Render), trust the first proxy so secure cookies
+// and other proxy-related headers behave correctly in production.
+if (process.env.NODE_ENV === 'production') {
+    app.set('trust proxy', 1);
+}
+
 // Session configuration
 app.use(session({
     secret: process.env.SESSION_SECRET || 'college-event-secret-key',
@@ -50,10 +56,14 @@ app.use(session({
     store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost:27017/college-event-manager'
     }),
+    // Configure cookie security based on environment. For cross-site cookies
+    // (client on Vercel, server on Render) we need `sameSite: 'none'` and
+    // `secure: true` in production and enable trust proxy above.
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
         httpOnly: true,
-        sameSite: 'lax'
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
     }
 }));
 
