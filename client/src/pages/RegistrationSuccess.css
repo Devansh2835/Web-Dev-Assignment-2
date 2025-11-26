@@ -126,6 +126,11 @@
 }
 
 @media (max-width: 768px) {
+    .registration-success-page {
+        padding: 40px 16px;
+        min-height: calc(100vh - 60px);
+    }
+
     .success-container {
         padding: 40px 24px;
     }
@@ -134,10 +139,15 @@
         width: 80px;
         height: 80px;
         font-size: 42px;
+        margin-bottom: 24px;
     }
 
     .success-title {
         font-size: 32px;
+    }
+
+    .success-message {
+        font-size: 16px;
     }
 
     .event-info-card {
@@ -153,11 +163,105 @@
         height: 200px;
     }
 
+    .qr-title {
+        font-size: 20px;
+    }
+
     .action-buttons {
         flex-direction: column;
     }
 
     .action-buttons .btn {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-success-page {
+        padding: 30px 12px;
+    }
+
+    .success-container {
+        padding: 30px 18px;
+        border-radius: var(--radius-md);
+    }
+
+    .success-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .success-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .success-message {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .event-info-card {
+        padding: 18px;
+        margin-bottom: 30px;
+    }
+
+    .event-name {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .event-details-grid-success {
+        gap: 12px;
+    }
+
+    .detail-item {
+        gap: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .detail-icon {
+        font-size: 18px;
+    }
+
+    .detail-text {
+        font-size: 14px;
+    }
+
+    .qr-section {
+        margin-bottom: 30px;
+    }
+
+    .qr-title {
+        font-size: 18px;
+    }
+
+    .qr-subtitle {
+        font-size: 12px;
+    }
+
+    .qr-code-container {
+        padding: 16px;
+    }
+
+    .qr-code {
+        width: 180px;
+        height: 180px;
+    }
+
+    .qr-info {
+        font-size: 12px;
+    }
+
+    .action-buttons {
+        gap: 12px;
+    }
+
+    .action-buttons .btn {
+        padding: 10px 16px;
+        font-size: 12px;
     }
 }

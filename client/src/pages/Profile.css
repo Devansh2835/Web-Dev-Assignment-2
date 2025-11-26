@@ -153,6 +153,17 @@
     font-size: 14px;
 }
 
+@media (max-width: 1024px) {
+    .registration-item {
+        gap: 20px;
+    }
+
+    .registration-image {
+        width: 160px;
+        height: 100px;
+    }
+}
+
 @media (max-width: 768px) {
     .profile-page {
         padding: 40px 0;
@@ -174,8 +185,20 @@
         font-size: 24px;
     }
 
+    .profile-email {
+        font-size: 14px;
+    }
+
+    .profile-badge {
+        display: inline-block;
+    }
+
     .profile-content {
         padding: 24px;
+    }
+
+    .section-title {
+        font-size: 24px;
     }
 
     .registration-item {
@@ -188,13 +211,96 @@
         height: 180px;
     }
 
+    .registration-details {
+        width: 100%;
+    }
+
+    .registration-meta {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
     .registration-footer {
         flex-direction: column;
         gap: 12px;
         align-items: flex-start;
+        padding-top: 12px;
     }
 
     .btn-sm {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-page {
+        padding: 30px 0;
+    }
+
+    .profile-header {
+        padding: 18px;
+        gap: 16px;
+    }
+
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    .profile-name {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .profile-email {
+        font-size: 12px;
+    }
+
+    .profile-content {
+        padding: 18px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .no-registrations {
+        padding: 40px 16px;
+    }
+
+    .no-registrations p {
+        font-size: 14px;
+    }
+
+    .registrations-list {
+        gap: 16px;
+    }
+
+    .registration-item {
+        padding: 16px;
+        border-radius: var(--radius-md);
+    }
+
+    .registration-image {
+        height: 160px;
+    }
+
+    .registration-title {
+        font-size: 18px;
+    }
+
+    .registration-meta {
+        font-size: 13px;
+    }
+
+    .registered-date {
+        font-size: 12px;
+    }
+
+    .btn-sm {
+        padding: 8px 14px;
+        font-size: 12px;
     }
 }

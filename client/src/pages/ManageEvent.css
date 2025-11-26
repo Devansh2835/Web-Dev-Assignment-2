@@ -93,6 +93,17 @@ textarea {
     background: #a01229;
 }
 
+@media (max-width: 1024px) {
+    .manage-event-container {
+        max-width: 100%;
+        padding: 40px 32px;
+    }
+
+    .form-row {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .manage-event-page {
         padding: 40px 0;
@@ -100,27 +111,102 @@ textarea {
 
     .manage-event-container {
         padding: 32px 24px;
+        margin: 0 16px;
     }
 
     .page-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
+        margin-bottom: 30px;
     }
 
     .page-title {
         font-size: 24px;
     }
 
+    .manage-event-form {
+        gap: 18px;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    .image-preview {
+        max-width: 100%;
+    }
+
+    .image-upload-label {
+        padding: 24px;
+        font-size: 14px;
     }
 
     .form-actions {
         flex-direction: column;
+        gap: 12px;
     }
 
     .form-actions .btn {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .manage-event-page {
+        padding: 30px 0;
+    }
+
+    .manage-event-container {
+        padding: 24px 16px;
+        margin: 0 12px;
+        border-radius: var(--radius-md);
+    }
+
+    .page-header {
+        margin-bottom: 20px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .manage-event-form {
+        gap: 16px;
+    }
+
+    .form-row {
+        gap: 16px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    input, textarea {
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 80px;
+    }
+
+    .image-upload-label {
+        padding: 20px;
+        font-size: 12px;
+    }
+
+    .image-upload-label:hover {
+        background: rgba(33, 128, 141, 0.05);
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 12px;
     }
 }

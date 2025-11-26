@@ -215,22 +215,29 @@
     }
 
     .registration-card {
-        position: static;
+        position: sticky;
+        top: 90px;
     }
 }
 
 @media (max-width: 768px) {
+    .event-details-page {
+        min-height: calc(100vh - 60px);
+    }
+
     .event-details-hero {
         height: 300px;
     }
 
     .event-details-content {
         margin-top: -60px;
+        padding-bottom: 40px;
     }
 
     .event-header {
         padding: 24px;
         flex-direction: column;
+        gap: 16px;
     }
 
     .event-title {
@@ -240,13 +247,115 @@
     .event-meta {
         flex-direction: column;
         gap: 12px;
+        font-size: 14px;
+    }
+
+    .event-details-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .event-section {
-        padding: 20px;
+        padding: 24px;
+        margin-bottom: 20px;
+    }
+
+    .section-heading {
+        font-size: 20px;
     }
 
     .registration-card {
         padding: 24px;
+        position: static;
+    }
+
+    .organiser-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+    }
+
+    .organiser-name {
+        font-size: 18px;
+    }
+
+    .btn-large {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-details-hero {
+        height: 240px;
+    }
+
+    .event-details-content {
+        margin-top: -40px;
+    }
+
+    .event-header {
+        padding: 18px;
+    }
+
+    .event-title {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .event-meta {
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .meta-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .event-section {
+        padding: 18px;
+        margin-bottom: 16px;
+    }
+
+    .section-heading {
+        font-size: 18px;
+    }
+
+    .event-description {
+        font-size: 14px;
+    }
+
+    .registration-card {
+        padding: 18px;
+    }
+
+    .capacity-badge {
+        padding: 16px;
+    }
+
+    .capacity-number {
+        font-size: 28px;
+    }
+
+    .organiser-avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .organiser-info {
+        text-align: center;
+    }
+
+    .organiser-name {
+        font-size: 16px;
+    }
+
+    .organiser-email {
+        font-size: 12px;
+    }
+
+    .login-hint {
+        font-size: 12px;
     }
 }

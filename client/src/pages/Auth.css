@@ -75,12 +75,57 @@
 }
 
 @media (max-width: 768px) {
+    .auth-page {
+        padding: 20px 16px;
+        min-height: calc(100vh - 60px);
+    }
+
+    .auth-container {
+        max-width: 100%;
+    }
+
     .auth-card {
         padding: 32px 24px;
     }
 
     .auth-title {
         font-size: 28px;
+    }
+
+    .form-group {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-page {
+        padding: 16px 12px;
+    }
+
+    .auth-card {
+        padding: 24px 16px;
+        border-radius: 8px;
+    }
+
+    .auth-title {
+        font-size: 24px;
+    }
+
+    .auth-subtitle {
+        font-size: 14px;
+    }
+
+    .auth-form {
+        gap: 16px;
+    }
+
+    .otp-input {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .auth-footer {
+        font-size: 12px;
     }
 }
 

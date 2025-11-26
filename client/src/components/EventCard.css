@@ -136,12 +136,90 @@
     color: var(--color-primary);
 }
 
+@media (max-width: 1024px) {
+    .event-card-image {
+        height: 200px;
+    }
+
+    .event-card-content {
+        padding: 16px;
+    }
+
+    .event-card-title {
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 768px) {
     .event-card-image {
         height: 180px;
     }
 
     .event-card-title {
-        font-size: 18px;
+        font-size: 17px;
+    }
+
+    .event-card-content {
+        padding: 16px;
+    }
+
+    .event-card-info {
+        gap: 6px;
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+
+    .event-info-item {
+        gap: 6px;
+    }
+
+    .info-text {
+        font-size: 13px;
+    }
+
+    .event-card-footer {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card {
+        border-radius: var(--radius-md);
+    }
+
+    .event-card-image {
+        height: 160px;
+    }
+
+    .event-card-content {
+        padding: 14px;
+    }
+
+    .event-card-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .event-card-description {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .event-card-info {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .info-text {
+        font-size: 12px;
+    }
+
+    .organiser-label {
+        font-size: 11px;
+    }
+
+    .organiser-name {
+        font-size: 13px;
     }
 }
