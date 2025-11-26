@@ -63,8 +63,34 @@ REACT_APP_API_URL=https://college-event-manager-api.onrender.com/api
 4. Select "other" and set:
    - **Root Directory**: `client`
 5. Add Environment Variable:
+
    - **Name**: `REACT_APP_API_URL`
    - **Value**: `https://your-render-url.onrender.com/api`
+
+   NOTE: Vercel lets you either paste the URL directly as the environment variable value or reference a Vercel "secret" (this uses the `@secret-name` syntax). If you see the error "references Secret 'react_app_api_url', which does not exist", it means the project is trying to reference a secret that hasn't been created yet.
+
+   - To paste the URL directly: just enter the full API URL (no `@`) and save.
+   - To use a secret (recommended if you prefer keeping values out of the UI): create the secret first and then set the environment variable value to `@react_app_api_url`. Example CLI commands below.
+
+   Example - create a Vercel secret that holds your Render API URL (run locally):
+
+```powershell
+# install/login once if needed
+npm i -g vercel
+vercel login
+
+# create a secret named `react_app_api_url` containing your Render URL (already provided)
+vercel secrets add react_app_api_url "https://eventspark-ts0r.onrender.com/api"
+```
+
+After the secret is created, set the environment variable value in the Vercel UI to:
+
+```
+@react_app_api_url
+```
+
+Or skip the secret and paste the URL directly into the `Value` field: `https://eventspark-ts0r.onrender.com/api` (no `@`) and save.
+
 6. Click "Deploy"
 7. Wait for deployment (2-5 minutes)
 8. Copy your Vercel URL (e.g., `https://your-app.vercel.app`)

@@ -22,6 +22,10 @@ coverage/
 server/.env
 client/.env
 
+# Ignore any client environment files (do not commit secrets)
+client/.env*
+client/.env.*
+
 ## Logs
 logs/
 *.log
